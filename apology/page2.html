@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette of Forgiveness</title>
+  <link rel="stylesheet" href="page2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay fade-in">
+    <div class="message-box">
+      <h1 id="storyText"></h1>
+    </div>
+
+    <div class="roulette-section hidden">
+      <div class="wheel-container">
+        <div class="wheel" id="wheel">
+          <div class="slice slice1"></div>
+          <div class="slice slice2"></div>
+          <div class="slice slice3"></div>
+          <div class="slice slice4"></div>
+          <div class="center-circle"></div>
+        </div>
+      </div>
+      <button id="spinBtn">Spin 🎡</button>
+
+      <div class="result hidden">
+        <h2 id="resultTitle"></h2>
+        <p id="resultMessage"></p>
+      </div>
+
+      <button id="nextBtn" class="hidden">Next ➜</button>
+    </div>
+  </div>
+
+  <script src="page2.js"></script>
+</body>
+</html>

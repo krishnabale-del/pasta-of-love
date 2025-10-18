@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Heart & Letter</title>
+  <link rel="stylesheet" href="css/page3.css">
+<script defer src="js/page3.js"></script>
+ />
+</head>
+<body>
+  <!-- NAV / HAMBURGER -->
+  <header class="topbar">
+    <div class="brand">Pasta of Love</div>
+    <button id="hamburger" aria-label="menu" class="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="navMenu" class="nav-menu hidden">
+    <a href="apologies.html" class="nav-link">1) Our Apologies</a>
+    <a href="about.html" class="nav-link">2) About Us</a>
+    <a href="started.html" class="nav-link">3) How Did We Start</a>
+    <button id="luckyCatBtn" class="nav-link cat-btn">4) Lucky Cat 🐱</button>
+  </nav>
+
+  <!-- Main area -->
+  <main class="stage" id="stage">
+    <!-- hearts container (animated on load) -->
+    <div id="heartsContainer" class="hearts"></div>
+
+    <!-- envelope area (hidden until hearts finish) -->
+    <div id="envelopeWrap" class="envelope-wrap hidden">
+      <div class="envelope">
+        <div class="envelope-top"></div>
+        <div class="envelope-body">
+          <div class="letter" id="letter">
+            <div class="letter-text">
+              <p>hey billa</p>
+              <p>i told you i'd never stop caring neither could i let this go — they say this pasta heals hearts, brings the dead back to life. i know i can't contact you but this is the least i can do right now. hope this pasta melts your heart like the cheese in it and even if it doesn't, savour it (i realllllly hope it does).</p>
+              <p>btw don't be lazy — go through the whole site.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lucky cat interactive area -->
+    <div id="luckyCatArea" class="cat-area hidden">
+      <img id="catImg" src="images/cat.png" alt="lucky cat" />
+      <div id="catNote" class="cat-note">every time you click me the chances of forgiving the chef increases ❤️</div>
+      <div id="catHint" class="cat-hint">click me</div>
+    </div>
+  </main>
+
+  <script src="page3.js"></script>
+</body>
+</html>

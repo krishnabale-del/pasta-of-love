@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe6ec;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Floating hearts */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Envelope */
+.envelope {
+  position: relative;
+  background: #ff9e9e;
+  width: 240px;
+  height: 150px;
+  border-radius: 10px;
+  margin-top: 140px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: envelopePop 2s ease forwards 3s;
+  z-index: 2;
+}
+
+@keyframes envelopePop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 80px solid #ffb6c1;
+  transform-origin: top;
+  animation: openFlap 2s ease forwards 4s;
+}
+
+@keyframes openFlap {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(180deg); }
+}
+
+.letter {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 85%;
+  background: white;
+  color: #444;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  animation: letterUp 2s ease forwards 5s;
+}
+
+@keyframes letterUp {
+  from { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  to { transform: translateX(-50%) translateY(-10%); opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ff7b7b;
+}
+
+.nav-links {
+  list-style: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  width: 180px;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  margin: 8px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ff7b7b;
+  font-weight: 500;
+}
+
+/* Lucky cat section */
+.lucky-cat {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.lucky-cat img {
+  width: 60px;          /* 👈 miniature size */
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.lucky-cat img:hover {
+  transform: scale(1.1);
+}
+
+/* Shine effect when clicked */
+.shine {
+  filter: brightness(2);
+  transform: scale(1.15);
+}
+
+/* Floating hearts animation */
+.floating-heart {
+  position: fixed;
+  bottom: 40px;
+  font-size: 1.5rem;
+  animation: floatUp 2s ease forwards;
+  color: #ff6fa3;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+
+.hover-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  margin-top: 6px;
+  color: #ffb6c1;
+  text-shadow: 0 0 4px white;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .letter {
+    font-size: 1rem;
+  }
+  .envelope {
+    width: 200px;
+    height: 130px;
+  }
+}
+/* Navigation styling */
+.navbar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  color: #ff6fa3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.2);
+}
+
+.nav-links {
+  list-style: none;
+  background-color: rgba(255, 182, 193, 0.9);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+}
+
+.nav-links li a:hover {
+  color: #fffbe7;
+}
+
+/* Show menu when active */
+.nav-links.active {
+  display: flex;
+}
